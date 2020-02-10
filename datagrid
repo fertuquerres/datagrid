@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Practica_Gridview
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow datos = new DataGridViewRow();
+            datos.CreateCells(dataGridView1);
+            datos.Cells[0].Value = txtci.Text;
+            datos.Cells[1].Value = txtnombre.Text;
+            datos.Cells[2].Value = txtapellido.Text;
+
+            dataGridView1.Rows.Add(datos);
+
+            txtci.Clear();
+            txtnombre.Clear();
+            txtapellido.Clear();
+        }
+    }
+}
